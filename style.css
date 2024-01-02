@@ -1,0 +1,464 @@
+ 
+ /* Recap FLEX ET POSITION 
+ 
+ Display flex sur le parent> cela a un effet sur le decendant directe auxquel il faut ajouter une propriété:
+ * align-items :stretch/center/start/end
+ * flex-direction:rows/columns
+ * justify-content:center/space-between/space-around/space-evenly
+ order: par defaut 0 > valeur permettant notamment de regler l'ordre d'apparition des <enfants> de même niveau
+ */
+ @import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200;10..100,300;10..100,700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+ 
+ @media screen and (min-width: 800px) { 
+ }
+  
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+ }
+ 
+ body {
+   background-color: black;
+   color: whitesmoke;
+ }
+ 
+ 
+ header {
+   background: linear-gradient(#fdef2f, #efa1ff);
+   padding: 10px 2px;
+ }
+ 
+ navbar {
+   display: flex;
+   text-align: right;
+   justify-content: space-between;
+   align-items: center;
+   position :relative;
+ }
+ 
+ .logo {
+   padding-left: 30px;
+   font-weight: bold;
+   font-family: Imbue, serif;
+   letter-spacing: 3px;
+   color: rgba(9, 9, 9, 0.793);
+   font-size: 2.5rem;
+ }
+ 
+ navbar ul li {
+ display: inline;
+ padding-right:30px;
+   
+ }
+ 
+ navbar a {
+   font-family: Metal Mania, serif;
+   font-size: 1.5rem;
+   
+ }
+ 
+ #backgroundImage {
+   background: url(./assets/mammy.png);
+   background-size: cover;
+   min-width: 100vh;
+   display: block;
+   margin: auto;
+ }
+ 
+ summary {
+   padding-top: 4%;
+   padding-bottom: 2%;
+   font-family: Imbue, serif;
+   font-size: 2rem;
+   text-align: center;
+ }
+ 
+ h2 {
+   padding-top: 2px;
+   font-family: Metal Mania, serif;
+   letter-spacing: 2px;
+ }
+ 
+ .effetneon {
+   font-family: Metal Mania, serif;
+   letter-spacing: 8px;
+   font-size: 2rem;
+   text-align: center;
+   padding-bottom: 4%;
+   color: #fff;
+   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px rgb(138, 18, 230),
+     0 0 77px rgb(149, 18, 230), 0 0 100px rgb(181, 18, 230);
+   animation: lumiere 1s infinite linear;
+ }
+ 
+ @keyframes lumiere {
+   0% {
+     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px rgb(156, 65, 199),
+       0 0 77px rgba(101, 24, 139, 0.129), 0 0 100px rgb(198, 18, 230);
+   }
+ 
+   50% {
+     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 32px rgb(181, 18, 230),
+       0 0 87px rgb(184, 18, 230), 0 0 120px rgb(154, 31, 146);
+   }
+ }
+
+  
+  /***********CARD SLIDE HAUT********************* */
+
+  main{
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-content: center;
+    background:SMOKY BLACK#100C08;
+    width: 100%;
+  
+    }
+    
+.card {
+  position: relative; 
+  width: 200px;
+  height: 300px;
+  margin:2%
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0px #665c22;
+}
+
+.front {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(
+    129deg,
+    rgb(35, 0, 57) 38%,
+    rgb(211, 172, 247) 66%,
+    rgba(255, 255, 255, 1) 69%,
+    rgb(37, 1, 73) 80%
+  );
+  background-size: 250% 100%;
+  z-index: 1;
+}
+
+.front img {
+  width: 100%;
+}
+
+.front h2 {
+  font-size: 1.2rem;
+  font-family: "Metal Mania", serif;
+  letter-spacing: 2.5px;
+  color: rgb(156, 184, 147);
+  text-align: justify;
+  padding-top : 40px;
+  
+}
+
+.span {
+  font-size: 0.8rem;
+  font-family: "Metal Mania", serif;
+  color: rgb(156, 184, 147);
+  text-align: justify;
+  justify-content: center;
+  padding-top : 40px;
+}
+
+.back {
+  background-image: url("assets/purple.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 200% 100%;
+  text-align: center;
+  font-family: "Garamond", serif;
+}
+
+.container-info {
+  padding: 5px 0;
+  color: #4e0267;
+}
+
+q {
+  color: rgb(251, 249, 249);
+  font-style: italic;
+  font-weight: bold;
+  font-size: small;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  width: 0%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(196, 88, 223),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+h4 {
+  color: gold;
+  font-family: Imbue;
+  font-size: small;
+}
+
+.container-info {
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover .front {
+  transform: translateY(-70%);
+  background-position: right;
+}
+
+.card:hover .back {
+  transform: scale(1.5);
+  background-position: center center;
+}
+
+.card:hover .container-info {
+  transform: translateY(100%);
+  backdrop-filter: blur(5px);
+}
+
+.card:hover hr {
+  transition-delay: 0.3s;
+  width: 60%;
+}
+
+.fab:hover {
+  transform: scale(1.2);
+}
+
+hr,
+.container-info {
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover .front {
+  transform: translateY(-70%);
+  background-position: right;
+}
+
+.card:hover .back {
+  transform: scale(1.5);
+  background-position: center center;
+}
+
+.card:hover .container-info {
+  transform: translateY(100%);
+  backdrop-filter: blur(5px);
+}
+
+.card:hover hr {
+  transition-delay: 0.3s;
+  width: 60%;
+}
+
+.fab:hover {
+  transform: scale(1.2);
+}
+
+/***********CARD ROTATION RECTO VERSO********************* */
+form,#face1 h2{
+  margin-top: 1px;
+  color:#4f0e5e84;
+  font-size:1.5rem;
+
+} 
+
+form,#facecontact{
+  display: flex;
+  background: url(./assets/versocontactcard.png) center/cover; width:15rem; height:20rem;
+  flex-direction: column; 
+  justify-content:space-around;
+  border-radius:15px;
+  align-items: center;
+  font-family:Imbue;
+  color: rgb(10, 9, 10);
+  text-shadow: 1px 1px 1px;
+  font-size:1rem
+}   
+
+textarea{
+padding: 10px;
+max-width: 100%;
+line-height: 1.5;
+border-radius: 5px;
+border: 2px solid #812ea5;
+box-shadow: 1px 1px 1px #999999b0;
+}
+
+button{
+margin:4px;
+background: #4f0e5e84;
+border-radius:15px;
+padding:4px;
+color:white;
+}
+
+form,#face1{ 
+  display: flex;
+  background: url(./assets/rectocontactcard.webp) center/cover; width:15rem; height:20rem;
+  flex-direction: row; 
+  justify-content:space-around;
+  border-radius:15px;
+  align-items:end ;
+  
+}  
+
+h2{
+
+  display: flex;
+  color:#90589c84;
+  font-size:1.2rem;
+  justify-content:space-evenly;
+}
+
+h3{
+  background-color: #812ea5;
+  border-radius: 20px;
+  padding: 2px;
+  margin-top:70px;
+  color: white;
+  letter-spacing:4px;
+  font-size: 2rem
+}
+
+button {
+  margin-bottom: 1px;
+  background: #4f0e5e84;
+  border-radius: 15px;
+}
+
+i{
+  margin-bottom: 20px;
+  font-size:xx-large;
+  flex-direction: row;
+  color:#812ea5
+}
+
+#socialmedia, a {
+  display :flex;
+  display:inline;
+  justify-content:space-around;
+  padding: 10px;
+  
+ }
+
+h2 {
+  color: #4f0e5e84;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+}
+
+
+.cardContainer {
+  width: 15rem;
+  height: 20rem;
+  perspective: 1000px;
+  flex-direction:row;
+  
+}
+
+.contactCard {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: pointer;
+
+ 
+ 
+}
+
+.cardContainer:hover .contactCard {
+  transform: rotateY(180deg);
+}
+
+#face1,
+#facecontact {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  backface-visibility: hidden;
+}
+
+
+#facecontact {
+  transform: rotateY(180deg);
+  
+} 
+
+
+footer{
+  display: flex;
+  justify-content: center;
+  font-family:Imbue,serif;
+
+}
+
+/**********responsive***********/
+ 
+@media screen and (max-width: 768px) {
+  header {
+     padding: 10px 5px; /* Ajustez le rembourrage en conséquence */
+  }
+
+  .logo {
+     padding-left: 15px; /* Ajustez le rembourrage en conséquence */
+     font-size: 2rem; /* Ajustez la taille de la police en conséquence */
+  }
+
+  navbar ul li {
+     padding-right: 15px; /* Ajustez l'espacement en conséquence */
+  }
+  @media screen and (max-width: 480px) {
+    navbar {
+       flex-direction: column; /* Afficher les éléments en colonne sur les écrans de téléphone */
+    }
+ 
+    navbar ul {
+       flex-direction: column; /* Afficher les liens en colonne */
+       text-align: center; /* Centrer le texte */
+    }
+ 
+    navbar ul li {
+       display: block;
+       padding: 10px 0; /* Ajuster l'espacement entre les liens */
+    }
+ }
+
+  #backgroundImage {
+     min-width: 100%; /* Ajustez la largeur minimale en conséquence */
+  }
+
+  /* Ajoutez d'autres ajustements de style pour les tailles d'écran plus petites */
+}
+
+.logo img,
+#backgroundImage {
+   max-width: 100%;
+   height: auto;
+}
+
+
